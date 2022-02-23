@@ -5,6 +5,17 @@ input[type="checkbox"].toggle {
     top: -9000px;
 }
 
+input[type="checkbox"].toggle + label {
+    display: flex;
+}
+
+input[type="checkbox"].toggle + label::before {
+    content: "";
+    width: 2em;
+    height: 1em;
+    background-color: blue;
+}
+
 input[type="checkbox"].toggle:checked + label {
     color:blueviolet;
 }
