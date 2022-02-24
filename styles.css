@@ -9,6 +9,7 @@ input[type="checkbox"].toggle + label {
     position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 input[type="checkbox"].toggle + label::before {
@@ -17,6 +18,8 @@ input[type="checkbox"].toggle + label::before {
     height: 1em;
     background-color: lightblue;
     border-radius: 1em;
+    transition: background-color 200ms ease-in-out;
+
 }
 
 input[type="checkbox"].toggle + label::after {
@@ -27,7 +30,11 @@ input[type="checkbox"].toggle + label::after {
     height: .9em;
     background-color: white;
     border-radius: 1em;
-    margin-right: .25em;
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle:focus + label::before {
+    outline: 1px solid purple;
 }
 
 input[type="checkbox"].toggle:checked + label::after {
@@ -36,6 +43,3 @@ input[type="checkbox"].toggle:checked + label::after {
     
 }
 
-input[type="checkbox"].toggle:checked + label {
-    color:blueviolet;
-}
